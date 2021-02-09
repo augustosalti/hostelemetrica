@@ -1,0 +1,19 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.principal{
+	margin-left: 50px;
+}
+
+
+@media (max-width: 1000px) {
+  .barraNav{
+  	display: none;
+  }
+  .card{
+  	display: none;
+  }
+}
+	

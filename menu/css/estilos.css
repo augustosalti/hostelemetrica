@@ -1,0 +1,194 @@
+* {
+  margin:0;
+  padding:0;
+  background-color: #f4f4f4;
+}
+
+.content{
+	margin: auto;
+}
+.tituloPrincipal{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	letter-spacing: 3px;
+	background-color: transparent;
+}
+.encabezado{
+	height: 350px;
+	background: url('../img/encabezado1.png') no-repeat center;
+	background-size: cover;
+}
+
+.logo{
+	width: 300px;
+	margin:auto;
+	padding-top: 65px;
+	background-color: transparent;
+	z-index: 0;
+}
+
+.imgLogo{
+	background-color: transparent;
+}
+
+.redes{
+	padding-top: 30px;
+	background-color: transparent;
+	overflow: hidden;
+	text-align: right;
+}
+.horario{
+	margin: auto;
+	padding-top: 20px;
+}
+.iconoRedes{
+	width: 50px;
+	margin: auto;
+	margin: 5px;
+}
+.fondo{
+	background-color: transparent;
+}
+
+.tituloMenu{
+	padding-top: 60px;
+	text-align: center;
+	color: #9b7737;
+	margin-bottom: 40px;
+}
+
+.linea{
+	margin: auto;
+	width: 50%;
+	border-top: 2px solid orange;
+	border-radius: 50%;
+	margin-top: 40px;
+}
+
+.parrafoMuerto{
+	display: inline;
+	padding: 0;
+	margin:0;
+}
+.lineaPrecio{
+	margin: auto;
+	width: 100%;
+	display: inline-block;
+	padding: 0;
+	margin:0;
+	margin-left: 10px;
+
+}
+
+.divPrecio{
+	background-color: #f2d497;
+	width: 80px;
+	height: 40px;
+	margin: auto;
+	transform: rotate(-10deg);
+}
+.estilosPrecio{
+	transform: rotate(10deg);
+	padding-top: 7px;
+	text-align: center;
+	margin: auto;
+	background-color: transparent;
+}
+
+.entradas{
+	padding-top: 30px;
+	margin: auto;
+}
+.titulo{
+	text-align: center;
+	color: #9b7737;
+	margin-bottom: 35px;
+}
+
+.descripcion{
+	padding: 0px;
+	overflow:hidden;
+    white-space:nowrap;
+    text-overflow: clip;
+    color: grey;
+}
+
+.cuadros {
+	margin-top: 60px;
+	margin-bottom: 40px;
+}
+
+.footer{
+	background-color: black;
+}
+.footer p{
+	background-color: transparent;
+	margin: auto;
+	color: white;
+}
+
+@media (max-width: 780px) {
+
+
+	.divPrecio{
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+
+	.nombre{
+		text-align: center;
+	}
+
+	.descripcion{
+		text-align: center;
+	}
+	.parrafoMuerto{
+		display: none;
+	}
+	.lineaPrecio{
+		display: none;
+	}
+
+	.horario {
+		display: none;
+	}
+	.redes{
+		text-align: center;
+	}
+	.iconoRedes{
+		margin-top: 70px;
+		text-align: center;
+	}
+
+	.tituloMenu{
+		margin-top: 10px;
+		padding-top: 0px;
+		font-size: 24px;
+	}
+
+	.menu{
+		margin-top: 0px;
+		padding-top: 0px;
+	}
+
+	.linea{
+		margin-top: 10px;
+		margin-bottom: 30px;
+	}
+	.cuadros{
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+	.entradas{
+		margin-top: 0px;
+		padding-top: 5px;
+	}
+	.tituloPrincial{
+		font-size: 8px;
+	}
+	.descripcion{
+  		overflow: visible;
+    	white-space: normal;
+    	text-overflow: none;
+  		}
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Administrador del Artículos</title>
+    <!-- BOOTSTRAP 4  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="date/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="date/jquery-ui.js"></script>
+  <script src="datejs.js"></script>
+
+     <style>
+       .ui-datepicker-calendar {
+        display: none;
+      }
+     </style>
+  </head>
+  <body>
+
+    <!-- NAVIGATION  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark barraNav">
+      <a class="navbar-brand" href="#">Administrador de Cierres Contables</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <form class="form-inline my-2 my-lg-0">
+
+            <label for="startDate">Date :</label>
+            <input name="fecha" id="fecha" class="date-picker date" />
+
+          </form>
+      </div>
+    </nav>
+
+    <div class="container principal">
+      <div class="row p-0">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <!-- FORM TO ADD TASKS -->
+              <form id="task-form">
+                <div class="form-group idForm-group">
+                  <label>ID</label><input type="text" id="id" placeholder="ID" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Turno</label><input type="text" id="turno" placeholder="Turno" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Responsable</label><input type="text" id="responsable" placeholder="Responsable" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Efectivo</label><input type="text" id="efectivo" placeholder="Efectivo" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Tarjeta</label><input type="text" id="tarjeta" placeholder="Tarjeta" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Gastos</label><input type="text" id="gastos" placeholder="Gastos" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Adelantos</label><input type="text" id="adelantos" placeholder="Adelantos" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Fondo recibido</label><input type="text" id="fondo" placeholder="Fondo" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Venta</label><input type="text" id="venta" placeholder="Venta" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Diferencia +/-</label><input type="text" id="diferencia" placeholder="Diferencia" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Fondo a dejar</label><input type="text" id="fondoadejar" placeholder="Fondo a dejar" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Sobre</label><input type="text" id="sobre" placeholder="Sobre" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Observaciones</label><textarea id="observaciones" cols="20" rows="5" class="form-control" placeholder="Observaciones"></textarea>
+                </div>
+ 
+                <input type="hidden" id="taskId">
+                <button type="submit" class="btn btn-primary btn-block text-center">
+                  EDITAR
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABLE  -->
+        <div class="col-md-9">
+          <div class="card my-4" id="task-result">
+            <div class="card-body">
+              <!-- SEARCH -->
+              <ul id="container"></ul>
+            </div>
+          </div>
+
+          <table class="table table-bordered table-sm" id="tabla">
+            <thead>
+              <tr>
+                <td>Fecha</td>
+                <td class="aBorrar">Turno</td>
+                <td>Venta</td>
+                <td>Dia</td>
+                <td>Efvo</td>
+                <td>Tarjeta</td>
+                <td>Fondo</td>
+                <td class="aBorrar">Dif +/-</td>
+                <td class="aBorrar">Gastos</td>
+                <td>Sobre</td>
+                <td class="aBorrar">Resp</td>
+              </tr>
+            </thead>
+            <tbody id="tasks" ></tbody>
+
+            <thead>
+              <tr>
+                <td></td>
+                <td class="aBorrar"></td>
+                <td>Venta</td>
+                <td></td>
+                <td>Efvo</td>
+                <td>Tarjeta</td>
+                <td>Fondo</td>
+                <td class="aBorrar">Dif +/-</td>
+                <td class="aBorrar">Gastos</td>
+                <td>Sobre</td>
+              </tr>
+            </thead>
+
+            <tbody id="sumas" ></tbody>
+          </table>
+          <button id="btnExportar">Generar Excel</button>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script src="xlsx.full.min.js"></script>
+    <script src="FileSaver.min.js"></script>
+    <script src="tableexport.min.js"></script>
+
+    <script src="excel.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,357 @@
+/* DIV CUESTIONARIO */
+body{
+	font-family: 'Amiri', serif;
+	background-color: #f8deb6;
+	background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+@font-face {
+	font-family: Frenchpress;
+	src: url(../FONTS/french.otf);
+	}
+
+.fuenteFrench{
+	font-family: 'Frenchpress', serif;
+	text-align: center;
+	font-size: 32px;
+	letter-spacing: 5px;
+	font-weight: bold;
+}
+
+
+.divCuestionario {
+	display: none;
+	margin: 100px;
+	padding: 50px;
+	padding-top: 0px;
+
+}
+.divCuestionario h3{
+	margin-top: 30px;
+	text-align: center;
+	margin-bottom: 70px;
+}
+
+.divAlergenos {
+	margin: auto;
+	margin-top: 0px;
+}
+
+.divBoton{
+	text-align: center;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	text-decoration: none;
+}
+
+.boton {
+	text-decoration: none;
+	/*border: none;*/
+  	/*color: white;*/
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	letter-spacing: 2px;
+  	border-radius: 50px;
+  	padding: 15px 52px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin: 4px 2px;
+  	cursor: pointer;
+  	/*border-radius: 5px;*/
+  	background-color: #f9ead9;
+  	cursor: pointer;
+  	width: 200px;
+  	-webkit-box-shadow: 3px 3px 13px -5px rgba(0,0,0,0.20);
+	-moz-box-shadow: 3px 3px 13px -5px rgba(0,0,0,0.20);
+	box-shadow: 3px 3px 13px -5px rgba(0,0,0,0.20);
+	border: solid 2px transparent;
+
+}
+
+.divBoton a{
+	text-decoration:none;
+	color: #564f44;
+
+}
+
+.boton:hover {
+	background-color: #e5ceb1;
+	text-decoration: none;
+	border: solid 2px white;
+}
+
+
+.seleccion1{
+	align-content: center;
+	margin: auto;
+}
+
+.boxImagen{
+	text-align: center;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+.seleccion2{
+	text-align: center;
+	margin: auto;
+	margin-bottom: 180px;
+}
+
+.DS{
+	margin:auto;
+	width: 150px;
+	height: 150px;
+	background-color: grey;
+	border-radius: 50%;
+	border: solid 4px transparent;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.dulce{
+	margin-right: 50px;
+}
+.salado{
+	margin-left: 50px;
+}
+
+
+.divSpan{
+	height: 23px;
+	background-color: white;
+	margin-left: -5px;
+	width: 110%;
+	position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.formulario{
+	margin: auto;
+	text-align: center;
+	align-content: center;
+}
+
+/* DIV RESULTADOS */
+
+.resultados {
+	margin: 100px;
+	padding: 50px;
+	z-index: 1;
+}
+
+.divProductos {
+	margin: auto;
+	z-index: 1;
+	margin-top: 30px;
+}
+
+.contenedorProducto {
+	border-radius: 20px;
+	margin: 20px;
+	z-index: 1;
+}
+
+.imagenProducto {
+	width: 200px;
+	height: 200px;
+	z-index: 0;
+	margin: auto;
+	padding: 0px;
+	border-radius: 20px;
+	display: block;
+  	border: 5px solid white;
+  	margin-bottom: 20px;
+}
+
+.nombreProducto{
+	text-align: center;
+	/*font-family: 'Bebas Neue', cursive;*/
+	font-family: 'Balsamiq Sans', cursive;
+	font-weight: bold;
+	color: #5D5C5C;
+	font-size: 20px;
+	line-height: 18px;
+
+}
+
+.descripcionProducto{
+	margin-top: -5px;
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
+	color: #6A6969;
+	font-size: 16px;
+	line-height: 14px;
+}
+
+.iconoImagen{
+	text-align: center;
+	width: 125px;
+	cursor: pointer;
+	border: solid 4px transparent;
+	border-radius: 50px;
+}
+
+.nombreAlergeno{
+	margin-top: 10px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+
+.nombreDulce{
+	margin-bottom: 20px;
+}
+
+.nombreSalado{
+	margin-bottom: 100px;
+}
+
+.divSalado{
+	margin-bottom: 100px;
+}
+
+.formulario{
+	margin: auto;
+	padding: auto;	
+	text-decoration: none;
+}
+/* MEDIA QUERYS MÓVIL */
+
+/*@media (min-width: 300px) and (max-width: 799px) {*/
+
+@media screen and (max-width: 850px){
+	.seleccion1{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.dulce{
+		margin:auto;
+		margin-bottom: 50px;
+	}
+
+	.salado{
+		margin: auto;
+	}
+
+	.divCuestionario {
+		display: none;
+		margin: 0px;
+		padding-top: 30px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	.divBoton{
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		padding-top: 20px;
+		padding-bottom: 0px;
+	}
+
+	.resultados {
+		margin: 15px;
+		padding-top: 30px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	.imagenProducto {
+		width: 225px;
+		height: 225px;
+	}
+
+	.iconoImagen{
+		width: 120px;
+	}
+
+	.boxImagen{
+		width: 50%;
+		padding:0px;
+		margin: 0px;
+		margin-bottom: 20px;
+	}
+
+	.nombreSalado{
+		margin-bottom: 20px;
+	}
+
+	.divSalado{
+	margin-bottom: 25px;
+	}
+ }
+/*
+ 	@media screen and (max-width: 450px) {
+	.seleccion1{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.dulce{
+		margin:auto;
+		margin-bottom: 50px;
+	}
+
+	.salado{
+		margin: auto;
+	}
+
+	.divCuestionario {
+		display: none;
+		margin: 0px;
+		padding-top: 30px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	.divBoton{
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		padding-top: 20px;
+		padding-bottom: 0px;
+	}
+
+	.resultados {
+		margin: 15px;
+		padding-top: 30px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	.imagenProducto {
+		width: 225px;
+		height: 225px;
+	}
+
+	.iconoImagen{
+		width: 120px;
+	}
+
+	.boxImagen{
+		width: 50%;
+		padding:0px;
+		margin: 0px;
+		margin-bottom: 20px;
+	}
+
+	.nombreSalado{
+		margin-bottom: 20px;
+	}
+
+	.divSalado{
+	margin-bottom: 25px;
+	}
+}*/
