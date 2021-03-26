@@ -6,9 +6,9 @@ $password = "root";
 $database = "productos";
 
 // $servername = "localhost";
-// $username = "nuttech_nicolas";
-// $password = "Jk9;VN}^J;xh";
-// $database = "nuttech_cajaddl";
+// $username = "nuttech_augusto";
+// $password = "2i6,t}qbptTr";
+// $database = "nuttech_damamma";
 
 $connection = new mysqli($servername, $username, $password, $database);
 

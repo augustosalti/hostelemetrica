@@ -10,12 +10,12 @@
 .tituloPrincipal{
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
-	letter-spacing: 3px;
 	background-color: transparent;
+	letter-spacing: 6px;
 }
 .encabezado{
 	height: 350px;
-	background: url('../img/encabezado1.png') no-repeat center;
+	background: url('../img/encabezado.png') no-repeat center;
 	background-size: cover;
 }
 
@@ -29,6 +29,7 @@
 
 .imgLogo{
 	background-color: transparent;
+	border-radius:150px;
 }
 
 .redes{
@@ -103,6 +104,7 @@
 	text-align: center;
 	color: #9b7737;
 	margin-bottom: 35px;
+	font-size: 24px;
 }
 
 .descripcion{
@@ -119,12 +121,32 @@
 }
 
 .footer{
-	background-color: black;
+	background-color: rgba(31,31,31,0.5);
 }
 .footer p{
 	background-color: transparent;
 	margin: auto;
 	color: white;
+}
+.imgAlergeno{
+	width: 30px;
+}
+.imagen{
+	display: none;
+}
+.nombre{
+	text-decoration: none;
+}
+.imagenId{
+	width: 300px;
+	height: 300px;
+	z-index: 0;
+	margin: left;
+	padding: 0px;
+	border-radius: 20px;
+	display: block;
+  	border: 5px solid white;
+  	margin-bottom: 20px;
 }
 
 @media (max-width: 780px) {
@@ -190,5 +212,16 @@
   		overflow: visible;
     	white-space: normal;
     	text-overflow: none;
-  		}
+	  }
+	.imgAlergeno{
+		text-align: center;
+		margin: auto;
+	}
+	.alergenos{
+		margin: auto;
+		text-align: center;
+	}
+	.imagenId{
+		margin: auto;
+	}
 }

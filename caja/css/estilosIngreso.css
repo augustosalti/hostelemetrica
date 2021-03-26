@@ -1,0 +1,76 @@
+.imagen{
+        position: relative;
+        margin:auto;
+        align-content: center;
+        margin: 10%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-image: url(../img/bg_acceso.png);
+        padding: 20px;
+        height: 800px;
+        background-position: center;
+        background-size: cover;
+  }
+
+.inputBox {
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        letter-spacing: 2px;
+        border-radius: 50px;
+        padding: 0px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: #f9ead9;
+        width: 200px;
+        border: solid 2px transparent;
+        height: 50px;
+        outline: none;
+  }
+
+.imagenLogo{
+        margin: auto;
+        text-align: center;
+        width: 80%;
+        margin-bottom: 20px;
+        padding-top: 175px;
+  }
+
+  .botonSubmit{
+        width: 50px;
+        padding-top: 5px;
+  }
+
+  .imgBienvenida{
+
+      width: 80%;
+  }
+
+
+  @media (max-width: 780px) {
+
+    .imagen{
+        height: 700px;
+        margin: 20px;
+    }
+
+    .imagenLogo{
+        margin: auto;
+        margin-top: 0px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .imgBienvenida{
+      margin: auto;
+      margin-top: 0px;
+      text-align: center;
+      /* width: 270px; */
+      margin-bottom: 30px;
+}
+  } 

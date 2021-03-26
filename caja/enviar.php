@@ -43,43 +43,7 @@ $efectivo = $billetes + $monedas;
 $fecha = strtotime($fecha);
 $fecha = date('Y-m-d',$fecha);
 
-$queryConsulta = "SELECT * from caja WHERE (fecha = '$fecha' and turno = '$turno')";
-$resultadoConsulta = mysqli_query($connection, $queryConsulta);
-
-$contador = 0;
-    /* recorrer los resultados  */
-    while ( $fila = $resultadoConsulta->fetch_assoc() ) {
-    	$contador = $contador + 1;
-    }
-
-    if ($contador >= 1){
-    	echo 'ERROR : El cierre para este turno ya se ha hecho, ponerse en contacto con Augusto o Nicolás ';
-      ?>
-            <script>
-              jQuery.alerts.okButton = 'Yes';
-              jQuery.alerts.cancelButton = 'No';                  
-              jConfirm('El cierre para este turno ya se ha hecho. ¿Quiere borrar el anterior y generar uno nuevo?',  ''), function(r) {
-                  if (r == true) {                    
-                    alert('hola, si');
-                    }  
-              }
-            </script>
-      <?php 
-    	exit();
-    }
-
-   header("refresh:5;url=https://www.google.com/");
-
-
-    ///////////////////////////////
-
-// if (!isset($resultadoConsulta)) {
-// 	echo "muuy bien";
-// } else{
-// 	    echo 'Ya se hizo un cierre en este turno';
-// 	exit();
-// }
-
+header("refresh:5;url=https://www.google.com/");
 
 $query = "INSERT into caja(turno, fecha, responsable, efectivo, tarjeta, gastos, adelantos, fondo, venta, diferencia, observaciones, fondoadejar, sobre) VALUES ('$turno', '$fecha', '$responsable', '$efectivo', '$tarjetas', '$gastos', '$adelantos', '$fondo', '$ventas', '$diferencia', '$observaciones', '$fondoDejar', '$sobre')";
 $result = mysqli_query($connection, $query);
@@ -111,6 +75,6 @@ $result = mysqli_query($connection, $query);
 	$mensaje = wordwrap($mensaje, 70, "\r\n");
 
 	// Enviarlo
-	mail('salti.augusto@gmail.com', 'Cierre de caja '. $fecha , $mensaje);
+	mail('damammabistrovalencia@gmail.com', 'Cierre de caja '. $fecha , $mensaje);
 
   ?>

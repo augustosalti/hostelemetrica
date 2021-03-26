@@ -69,17 +69,22 @@ $(document).ready(function(){
         if ($("#diferencia").val() == 'NaN'){
             $("#diferencia").val("0")
         }
+        if ($("#sobre").val() == ''){
+            $("#sobre").val("0")
+        }
     }
 
     function sumaTotal(){
         var sumaTotal = 0.0;
-        sumaTotal = parseFloat($("#billetes").val()) + parseFloat($("#monedas").val()) + parseFloat($("#tarjetas").val()) - parseFloat($("#gastos").val()) - parseFloat($("#adelantos").val());
+        // sumaTotal = parseFloat($("#billetes").val()) + parseFloat($("#monedas").val()) + parseFloat($("#tarjetas").val()) - parseFloat($("#gastos").val()) - parseFloat($("#adelantos").val());
+        sumaTotal = parseFloat($("#billetes").val()) + parseFloat($("#monedas").val()) + parseFloat($("#tarjetas").val());
         $("#total").val(sumaTotal) - parseFloat($("#ventas").val());
+
     }
 
     function diferencia(){
         var diferencia = 0.0;
-        diferencia = parseFloat($("#billetes").val()) + parseFloat($("#monedas").val()) + parseFloat($("#tarjetas").val()) - parseFloat($("#fondo").val()) - parseFloat($("#ventas").val());
+        diferencia = parseFloat($("#billetes").val()) + parseFloat($("#monedas").val()) + parseFloat($("#tarjetas").val()) + parseFloat($("#adelantos").val()) + parseFloat($("#gastos").val())  - parseFloat($("#fondo").val()) - parseFloat($("#ventas").val());
         diferencia = diferencia.toFixed(2);
         $("#diferencia").val(diferencia);
     }
@@ -89,15 +94,22 @@ $(document).ready(function(){
 
     $("#100").keyup(function(){
         valor0();
+        var valorEntero;
+        valorEntero = parseInt($("#100").val());
+        $("#100").val(valorEntero);
         var sumaBilletes = 0;
         sumaBilletes = parseInt($("#100").val()) + parseInt($("#50").val()) + parseInt($("#20").val()) + parseInt($("#10").val()) + parseInt($("#5").val());
         $("#billetes").val(sumaBilletes);
         sumaTotal();
         diferencia();//
+
     });
 
 	$("#50").keyup(function(){
         valor0();
+        var valorEntero;
+        valorEntero = parseInt($("#50").val());
+        $("#50").val(valorEntero);
         var sumaBilletes = 0;
         sumaBilletes = parseInt($("#100").val()) + parseInt($("#50").val()) + parseInt($("#20").val()) + parseInt($("#10").val()) + parseInt($("#5").val());
         $("#billetes").val(sumaBilletes);
@@ -107,6 +119,9 @@ $(document).ready(function(){
 
     $("#20").keyup(function(){
         valor0();
+        var valorEntero;
+        valorEntero = parseInt($("#20").val());
+        $("#20").val(valorEntero);
         var sumaBilletes = 0;
         sumaBilletes = parseInt($("#100").val()) + parseInt($("#50").val()) + parseInt($("#20").val()) + parseInt($("#10").val()) + parseInt($("#5").val());
         $("#billetes").val(sumaBilletes);
@@ -116,6 +131,9 @@ $(document).ready(function(){
 
     $("#10").keyup(function(){
         valor0();
+        var valorEntero;
+        valorEntero = parseInt($("#10").val());
+        $("#10").val(valorEntero);
         var sumaBilletes = 0;
         sumaBilletes = parseInt($("#100").val()) + parseInt($("#50").val()) + parseInt($("#20").val()) + parseInt($("#10").val()) + parseInt($("#5").val());
         $("#billetes").val(sumaBilletes);
@@ -125,6 +143,9 @@ $(document).ready(function(){
 
     $("#5").keyup(function(){
         valor0();
+        var valorEntero;
+        valorEntero = parseInt($("#5").val());
+        $("#5").val(valorEntero);
         var sumaBilletes = 0;
         sumaBilletes = parseInt($("#100").val()) + parseInt($("#50").val()) + parseInt($("#20").val()) + parseInt($("#10").val()) + parseInt($("#5").val());
         $("#billetes").val(sumaBilletes);
@@ -137,15 +158,21 @@ $(document).ready(function(){
 
     $("#2").keyup(function(){
         valor0Monedas();
+        var valorEntero;
+        valorEntero = parseInt($("#2").val());
+        $("#2").val(valorEntero);
         var sumaMonedas = 0.0;
         sumaMonedas = parseFloat($("#2").val()) + parseFloat($("#1").val()) + parseFloat($("#05").val()) + parseFloat($("#02").val()) + parseFloat($("#01").val()) +  parseFloat($("#005").val());
         $("#monedas").val(sumaMonedas);
         sumaTotal();
-        diferencia();//
+        diferencia();
     });
 
     $("#1").keyup(function(){
         valor0Monedas();
+        var valorEntero;
+        valorEntero = parseInt($("#1").val());
+        $("#1").val(valorEntero);
         var sumaMonedas = 0;
         sumaMonedas = parseFloat($("#2").val()) + parseFloat($("#1").val()) + parseFloat($("#05").val()) + parseFloat($("#02").val()) + parseFloat($("#01").val()) +  parseFloat($("#005").val());
         $("#monedas").val(sumaMonedas);
@@ -215,6 +242,21 @@ $(document).ready(function(){
         valor0Resto();
         diferencia();
     });
+
+    $("#sobre").keyup(function(){
+        valor0Resto();
+        diferencia();
+        
+        if ($("#sobre").val() != ''){
+            diferenciaFondo = parseFloat($("#billetes").val()) + parseFloat($("#monedas").val()) - parseFloat($("#sobre").val());
+            $("#fondoDejar").val(diferenciaFondo);
+        }
+        if ($("#fondoDejar").val() == ''){
+            $("#fondoDejar").val("0")
+        }
+    });
+
+
 
     $(function comprobarHora(){
       var tiempo = new Date();

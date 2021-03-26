@@ -41,12 +41,12 @@
 
 
 
-    $query = "INSERT into articles(nombre, descripcion, tipo, mostrar, categoria, precio, costo, proveedor, g, c, h, p, cc, s, l, f, a, m, gs, d, mo, al, img) VALUES ('$task_name', '$task_description', '$task_tipo', '$task_mostrar', '$task_categoria', '$task_price', '$task_costo', '$task_proveedor', '$task_g', '$task_c', '$task_h', '$task_p', '$task_cc', '$task_s', '$task_l', '$task_f', '$task_a', '$task_m', '$task_gs', '$task_d', '$task_mo', '$task_al', '$imagenBinaria')";
+    $query = "INSERT into articles(nombre, descripcion, tipo, mostrar, categoria, precio, g, c, h, p, cc, s, l, f, a, m, gs, d, mo, al, img) VALUES ('$task_name', '$task_description', '$task_tipo', '$task_mostrar', '$task_categoria', '$task_price', '$task_g', '$task_c', '$task_h', '$task_p', '$task_cc', '$task_s', '$task_l', '$task_f', '$task_a', '$task_m', '$task_gs', '$task_d', '$task_mo', '$task_al', '$imagenBinaria')";
 
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
-      die('Query Failed.');
+      die('Falló loco');
     }
 
     echo "Task Added Successfully";  

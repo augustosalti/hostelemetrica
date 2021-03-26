@@ -66,7 +66,7 @@ $(document).ready(function() {
                   </td> 
                   <td class="aBorrar">${task.turno}</td>
                   <td>${task.venta}</td>
-                  <td>${task.dia}</td>
+
                   <td>${task.efectivo}</td>
                   <td>${task.tarjeta}</td>
                   <td>${task.fondo}</td>
@@ -107,7 +107,7 @@ $(document).ready(function() {
                   </td> 
                   <td class="aBorrar">${task.turno}</td>
                   <td>${task.venta}</td>
-                  <td>${task.dia}</td>
+
                   <td>${task.efectivo}</td>
                   <td>${task.tarjeta}</td>
                   <td>${task.fondo}</td>
@@ -146,7 +146,6 @@ $(document).ready(function() {
                   <td>SUMAS:</td>
                   <td class="aBorrar"></td>
                   <td>${task.venta}</td>
-                  <td></td>
                   <td>${task.efectivo}</td>
                   <td>${task.tarjeta}</td>
                   <td>${task.fondo}</td>

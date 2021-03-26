@@ -88,12 +88,12 @@
 				      }
 
                include'../BDD/connectPDO.php';
-               $resultados = $conexion->query("SELECT * FROM articulos WHERE mostrar = '1' $a ORDER BY tipo");
+               $resultados = $conexion->query("SELECT * FROM articles WHERE mostrar = '1' $a ORDER BY tipo");
                foreach ($resultados as $fila) {
               ?>
               <div class="col-sm-12 col-md-12 col-lg-12 contenedorProducto" style="flex: 200px;">
                 <tr>
-                  <td><img class="imagenProducto" src="<?php echo $fila['imagen'] ?>"></img></td>
+                  <td><img class="imagenProducto" onerror="this.src='1.jpg'" src="vista.php?id=<?php echo $fila['id']?>"></img></td>
                 </tr>
                   
                 <tr>

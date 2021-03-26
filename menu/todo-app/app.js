@@ -36,7 +36,7 @@ $(document).ready(function() {
     paqueteDeDatos.append('d', $('#d').prop('value'));
     paqueteDeDatos.append('mo', $('#mo').prop('value'));
     paqueteDeDatos.append('al', $('#al').prop('value'));
-
+    $('#blah').attr('src', 'preImg.png');
     var destino = "task-add.php";
 
     const url = edit === false ? 'task-add.php' : 'task-edit.php';
@@ -50,7 +50,7 @@ $(document).ready(function() {
             success: function(resultado){ // En caso de que todo salga bien.
               console.log(resultado);
               $('#task-form').trigger('reset');
-              fetchTasks();
+              fetchTasks(); 
               edit = false;
             },
             error: function (){ // Si hay algún error.
@@ -95,7 +95,34 @@ $(document).ready(function() {
     });
   }
 
-
+  // TASK SEARCH
+  $('#search').keyup(function() {
+    if($('#search').val()) {
+      let search = $('#search').val();
+      $.ajax({
+        url: 'task-search.php',
+        data: {search},
+        type: 'POST',
+        success: function (response) {
+          if(!response.error) {
+            let tasks = JSON.parse(response);
+            let template = '';
+            tasks.forEach(task => {
+              template += ` 
+                  <tr taskId="${task.id}">
+                    <td>
+                      <a href="#" class="task-item">${task.nombre} </a>
+                    </td>
+                  </tr> 
+                    ` 
+            });
+            $('#task-result').show();
+            $('#container').html(template);
+          }
+        } 
+      })
+    }
+  });
 
   // Get a Single Task by Id 
   $(document).on('click', '.task-item', (e) => {
@@ -112,42 +139,42 @@ $(document).ready(function() {
       $('#costo').val(task.costo);
       $('#proveedor').val(task.proveedor);
 
-      if (task.mostrar == 1){ $('#mostrar').prop("checked", true); } else{ $('#mostrar').prop("checked", false); }
+      if (task.mostrar == 1){ $('#mostrar').prop("checked", true); $('#mostrar').prop("value", 1); } else{ $('#mostrar').prop("checked", false);  $('#mostrar').prop("value", 0); }
 
-      if (task.g == 1){ $('#g').prop("checked", true); } else{ $('#g').prop("checked", false); }
+      if (task.g == 1){ $('#g').prop("checked", true); $('#g').prop("value", 1); } else{ $('#g').prop("checked", false);  $('#g').prop("value", 0); }
 
-      if (task.c == 1){ $('#c').prop("checked", true); } else{ $('#c').prop("checked", false); }
+      if (task.c == 1){ $('#c').prop("checked", true); $('#c').prop("value", 1); } else{ $('#c').prop("checked", false);  $('#c').prop("value", 0); }
 
-      if (task.h == 1){ $('#h').prop("checked", true); } else{ $('#h').prop("checked", false); }
+      if (task.h == 1){ $('#h').prop("checked", true); $('#h').prop("value", 1); } else{ $('#h').prop("checked", false);  $('#h').prop("value", 0); }
 
-      if (task.p == 1){ $('#p').prop("checked", true); } else{ $('#p').prop("checked", false); }
+      if (task.p == 1){ $('#p').prop("checked", true); $('#p').prop("value", 1); } else{ $('#p').prop("checked", false);  $('#p').prop("value", 0); }
 
-      if (task.cc == 1){ $('#cc').prop("checked", true); } else{ $('#cc').prop("checked", false); }
+      if (task.cc == 1){ $('#cc').prop("checked", true); $('#cc').prop("value", 1); } else{ $('#cc').prop("checked", false);  $('#cc').prop("value", 0); }
 
-      if (task.s == 1){ $('#s').prop("checked", true); } else{ $('#s').prop("checked", false); }
+      if (task.s == 1){ $('#s').prop("checked", true); $('#s').prop("value", 1); } else{ $('#s').prop("checked", false);  $('#s').prop("value", 0); }
 
-      if (task.l == 1){ $('#l').prop("checked", true); } else{ $('#l').prop("checked", false); }
+      if (task.l == 1){ $('#l').prop("checked", true); $('#l').prop("value", 1); } else{ $('#l').prop("checked", false);  $('#l').prop("value", 0); }
 
-      if (task.f == 1){ $('#f').prop("checked", true); } else{ $('#f').prop("checked", false); }
+      if (task.f == 1){ $('#f').prop("checked", true); $('#f').prop("value", 1); } else{ $('#f').prop("checked", false);  $('#f').prop("value", 0); }
 
-      if (task.a == 1){ $('#a').prop("checked", true); } else{ $('#a').prop("checked", false); }
+      if (task.a == 1){ $('#a').prop("checked", true); $('#a').prop("value", 1); } else{ $('#a').prop("checked", false);  $('#a').prop("value", 0); }
 
-      if (task.m == 1){ $('#m').prop("checked", true); } else{ $('#m').prop("checked", false); }
+      if (task.m == 1){ $('#m').prop("checked", true); $('#m').prop("value", 1); } else{ $('#m').prop("checked", false);  $('#m').prop("value", 0); }
 
-      if (task.gs == 1){ $('#gs').prop("checked", true); } else{ $('#gs').prop("checked", false); }
+      if (task.gs == 1){ $('#gs').prop("checked", true); $('#gs').prop("value", 1); } else{ $('#gs').prop("checked", false);  $('#gs').prop("value", 0); }
 
-      if (task.d == 1){ $('#d').prop("checked", true); } else{ $('#d').prop("checked", false); }
+      if (task.d == 1){ $('#d').prop("checked", true); $('#d').prop("value", 1); } else{ $('#d').prop("checked", false);  $('#d').prop("value", 0); }
 
-      if (task.mo == 1){ $('#mo').prop("checked", true); } else{ $('#mo').prop("checked", false); }
+      if (task.mo == 1){ $('#mo').prop("checked", true); $('#mo').prop("value", 1); } else{ $('#mo').prop("checked", false);  $('#mo').prop("value", 0); }
 
-      if (task.al == 1){ $('#al').prop("checked", true); } else{ $('#al').prop("checked", false); }
-
+      if (task.al == 1){ $('#al').prop("checked", true); $('#al').prop("value", 1); } else{ $('#al').prop("checked", false);  $('#al').prop("value", 0); }
 
 
       $('#taskId').val(task.id);
       url = "verImg.php?id="+ task.id;
       $('#blah').attr('src', url);
       edit = true;
+      console.log(task);
     });
     e.preventDefault();
   });
